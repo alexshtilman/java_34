@@ -43,7 +43,8 @@ public class RandomData {
 		String city = getRandomCity();
 		String street = getRandomStreet();
 		int aprt = getRandomInt(1, 400);
-		return new Address(city, street, aprt);
+		int building = getRandomInt(1, 600);
+		return new Address(city, street, aprt,building);
 	}
 
 	private static String getRandomStreet() {
@@ -103,6 +104,10 @@ public class RandomData {
 				"Tufin", "Vonage", "WalkMe", "Web Pals Ltd", "WeWork", "Wix", "Amazon", "Amazon Annapurna", "Mellanox",
 				"Viber", "Vulcan Cyber", "Breach Digital", "Red Hat", "Seebo", "Signals Analytics", "Tag VS" };
 		return getRandomElement(companys);
+	}
+	public static String getRandomGarden() {
+		String[] garden = { "A0", "A1", "B1", "B2" };
+		return getRandomElement(garden);
 	}
 
 	public static String getRandomTitle() {

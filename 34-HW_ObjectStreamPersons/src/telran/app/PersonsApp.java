@@ -3,9 +3,9 @@ package telran.app;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 
-import telran.persons.dto.Employee;
+import telran.persons.dto.Person;
+
 import static telran.persons.generators.GenerateRandomEmployyes.*;
 import static telran.utils.DeserializePersonsFromFIle.*;
 import static telran.utils.SerializePersonsToFile.*;
@@ -90,7 +90,7 @@ public class PersonsApp {
 	private static void readFromFileAction() throws Exception {
 		long startTime = System.currentTimeMillis();
 		System.out.println("Reading data from file, please wait...");
-		ArrayList<Employee> employees = new ArrayList<Employee>();
+		Person[] employees = {};
 		try {
 			employees = getObjectsFromFile( DEFAULT_FILE_NAME);
 			long endTime = System.currentTimeMillis();
@@ -105,12 +105,12 @@ public class PersonsApp {
 	private static void saveToFileAction(Integer amount) {
 		long startTime = System.currentTimeMillis();
 		System.out.println("Starting generation, please wait...");
-		Employee[] employees = GenerateEmployees(amount);
+		Person[] persons = GenerateEmployees(amount);
 		long endTime = System.currentTimeMillis();
 		displayTimeResults(startTime, endTime);
 		System.out.println("Saving to file...");
 		try {
-			putObjectsToFile(employees, DEFAULT_FILE_NAME);
+			putObjectsToFile(persons, DEFAULT_FILE_NAME);
 			System.err.println("Saving complete.");
 		} catch (IOException e) {
 			System.out.println("Saving file fails: " + e.getStackTrace());

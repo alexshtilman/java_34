@@ -1,5 +1,7 @@
 package telran.persons.dto;
 
+import java.time.LocalDate;
+
 public class Child extends Person {
 
 	/**
@@ -12,8 +14,8 @@ public class Child extends Person {
 
 	}
 
-	public Child(String garten) {
-		super();
+	public Child(int id, Address address, String name, LocalDate birthDate, String garten) {
+		super(id, address, name, birthDate);
 		this.garten = garten;
 	}
 
@@ -27,7 +29,8 @@ public class Child extends Person {
 
 	@Override
 	public String toString() {
-		return "Child [garten=" + garten + "]";
+		return "Child [garten=" + garten + ", id=" + getId() + ", address=" + getAddress() + ", name=" + getName()
+				+ ", birthDate=" + getBirthDate() + "]";
 	}
 
 }
