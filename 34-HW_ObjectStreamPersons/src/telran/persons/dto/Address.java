@@ -12,7 +12,8 @@ public class Address implements Serializable {
 	private String street;
 	private int building;
 	private int aprt;
-
+ 
+	
 	public Address() {
 
 	}
